@@ -314,8 +314,8 @@ include './components/navbar.php';
   </div>
 
 
-  <!-- javascript -->
-  <script src="https://cube.webuildthemes.com/assets/js/vendor.bundle.js"></script>
-  <script src="https://cube.webuildthemes.com/assets/js/index.bundle.js"></script></body>
+  <script src="assets/js/vendor.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
 
 </html>

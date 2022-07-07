@@ -1,7 +1,7 @@
 <!-- navbar -->
-<nav class="navbar navbar-expand-lg navbar-sticky navbar-dark">
+<nav class="navbar navbar-expand-lg navbar-sticky navbar-light">
     <div class="container">
-      <a href="./" class="navbar-brand"><img src="assets/images/logo/nac-logow.png" alt="Logo"></a>
+      <a href="./" class="navbar-brand"><img src="assets/images/logo/nac-logod.png" alt="Logo"></a>
   
       <ul class="navbar-nav navbar-nav-secondary order-lg-3">
         <li class="nav-item">
