@@ -1,16 +1,6 @@
 <?php
 include './components/dashboardheader.php';
 require_once './auth/account.php';
-
-if (!isset($_SESSION['email'])) {
-    header('location: login');
-}
-
-if (isset($_GET['logout'])) {
-  session_destroy();
-  unset($_SESSION['email']);
-  header("location: login");
-}
 ?>
 
     <div class="offcanvas-wrap">
@@ -42,19 +32,6 @@ if (isset($_GET['logout'])) {
                                             </div>
 
                                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                                <a href="" class="card equal-md-4-3 card-hover-border bg-white">
-                                                    <div class="card-wrap text-center">
-                                                        <div class="card-header pb-0">
-                                                            <img src="assets/images/power.svg" alt="Logo" class="mb-2 w-40">
-                                                        </div>
-                                                        <div class="card-footer pt-0 mt-auto">
-                                                            <h4 class="card-title fw-light">LOG OUT</h4>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-
-                                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
                                                 <a href="account" class="card equal-md-4-3 card-hover-border bg-white">
                                                     <div class="card-wrap text-center">
                                                         <div class="card-header pb-0">
@@ -62,6 +39,19 @@ if (isset($_GET['logout'])) {
                                                         </div>
                                                         <div class="card-footer pt-0 mt-auto">
                                                             <h4 class="card-title fw-light">ACCOUNT</h4>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+
+                                            <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                                                <a href="security" class="card equal-md-4-3 card-hover-border bg-white">
+                                                    <div class="card-wrap text-center">
+                                                        <div class="card-header pb-0">
+                                                            <img src="assets/images/security.svg" alt="Logo" class="mb-2 w-40">
+                                                        </div>
+                                                        <div class="card-footer pt-0 mt-auto">
+                                                            <h4 class="card-title fw-light">Security</h4>
                                                         </div>
                                                     </div>
                                                 </a>

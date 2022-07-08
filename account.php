@@ -15,47 +15,79 @@ include './components/dashboardheader.php';
                         <section>
                             <div class="row">
                                 <div class="col-lg-12">
-                                <div class="card bg-opaque-white">
-                                    <div class="card-body bg-white">
-                                    <form class="row g-2 g-lg-3">
-                                        <div class="col-md-12">
-                                        <label for="inputCountry" class="form-label">Country</label>
-                                        <select id="inputCountry" class="form-select">
-                                            <option selected>Germany</option>
-                                            <option>Spain</option>
-                                            <option>France</option>
-                                            <option>Portugal</option>
-                                            <option>...</option>
-                                        </select>
+                                    <div class="card bg-opaque-white">
+                                        <div class="card-body bg-white">
+                                            <h3 class="fs-6">Profile</h3>
+                                            <hr>
+                                            <?php
+                                                if (isset($_SESSION['error_message'])) {
+                                                    ?>
+                                                    <div class="alert alert-danger" role="alert">
+                                                        <div class="alert-message text-center">
+                                                            <?php
+                                                            echo $_SESSION['error_message'];
+                                                            session_destroy();
+                                                            ?>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                    unset($_SESSION['error_message']);
+                                                }
+                                            ?>
+                                            <?php
+                                                if (isset($_SESSION['success_message'])) {
+                                                    ?>
+                                                    <div class="alert alert-success" role="alert">
+                                                        <div class="alert-message text-center">
+                                                            <?php echo $_SESSION['success_message']; ?>
+                                                        </div>
+                                                    </div>
+                                                    <?php
+                                                    unset($_SESSION['success_message']);
+                                                }
+                                            ?>
+                                            <form class="row g-2 g-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                                <div class="col-md-6">
+                                                    <label for="inputCity" class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" name="firstName" placeholder="City" value="Munich">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="inputZip" class="form-label">Last Name</label>
+                                                    <input type="text" class="form-control" name="lastName" placeholder="Zip Code">
+                                                </div>
+
+                                                <div class="col-md-12">
+                                                    <label for="inputAddress" class="form-label">Company Name</label>
+                                                    <input type="text" class="form-control" name="companyName" placeholder="Address">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="inputCity" class="form-label">Email</label>
+                                                    <input type="text" class="form-control" name="email" placeholder="City" value="Munich">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="inputZip" class="form-label">Phone Number</label>
+                                                    <input type="text" class="form-control" name="phone" placeholder="Zip Code">
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <label for="inputCountryCode" class="form-label">Security Code</label>
+                                                    <input type="text" class="form-control" name="userID" placeholder="Country Code">
+                                                </div>
+
+                                                <div class="col-md-8">
+                                                    <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+                                                    <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
+                                                </div>
+
+                                                <div class="col-md-12 text-center">
+                                                    <button name="" type="submit" class="btn btn-lg btn-dark">Update Profile</button>
+                                                </div>
+                                            </form>
                                         </div>
-                                        <div class="col-md-12">
-                                        <label for="inputAddress" class="form-label">Address</label>
-                                        <input type="text" class="form-control" id="inputAddress" placeholder="Address">
-                                        </div>
-                                        <div class="col-md-8">
-                                        <label for="inputCity" class="form-label">City</label>
-                                        <input type="text" class="form-control" id="inputCity" placeholder="City" value="Munich">
-                                        </div>
-                                        <div class="col-md-4">
-                                        <label for="inputZip" class="form-label">Zip</label>
-                                        <input type="text" class="form-control" id="inputZip" placeholder="Zip Code">
-                                        </div>
-                                        <div class="col-md-12">
-                                        <label for="inputStateProvince" class="form-label">State / Province</label>
-                                        <input type="text" class="form-control" id="inputStateProvince"
-                                            placeholder="State / Province">
-                                        </div>
-                                        <div class="col-md-4">
-                                        <label for="inputCountryCode" class="form-label">Country Code</label>
-                                        <input type="text" class="form-control" id="inputCountryCode" placeholder="Country Code">
-                                        </div>
-                                        <div class="col-md-8">
-                                        <label for="inputPhoneNumber" class="form-label">Phone Number</label>
-                                        <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
-                                        </div>
-                                    </form>
                                     </div>
-                                </div>
                                 </div>
                             </div>
                         </section>
