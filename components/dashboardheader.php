@@ -1,3 +1,18 @@
+<?php
+//Connect Database
+include ('config/db.php');
+
+session_start();
+if (!isset($_SESSION['email'])) {
+    header('location: login');
+}
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['email']);
+    header("location: login");
+}
+
+?>
 <!doctype html>
 <html lang="en">
 

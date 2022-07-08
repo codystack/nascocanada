@@ -1,5 +1,6 @@
 <?php
 include './components/header.php';
+require_once './auth/account.php';
 ?>
 
 
@@ -17,17 +18,44 @@ include './components/header.php';
                     <h5 class="fs-4 mb-1">Sign In</h5>
                 </div>
                 <div class="card-body bg-white">
-                    <form action="#">
+                    <?php
+                        if (isset($_SESSION['error_message'])) {
+                            ?>
+                            <div class="alert alert-danger" role="alert">
+                                <div class="alert-message text-center">
+                                    <?php
+                                    echo $_SESSION['error_message'];
+                                    session_destroy();
+                                    ?>
+                                </div>
+                            </div>
+                            <?php
+                            unset($_SESSION['error_message']);
+                        }
+                    ?>
+                    <?php
+                        if (isset($_SESSION['success_message'])) {
+                            ?>
+                            <div class="alert alert-success" role="alert">
+                                <div class="alert-message text-center">
+                                    <?php echo $_SESSION['success_message']; ?>
+                                </div>
+                            </div>
+                            <?php
+                            unset($_SESSION['success_message']);
+                        }
+                    ?>
+                    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" autocomplete="off">
                         <div class="form-floating mb-2">
-                            <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                            <input type="email" class="form-control" name="email" placeholder="name@example.com">
                             <label for="floatingInput">Email address</label>
                         </div>
                         <div class="form-floating mb-2">
-                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+                            <input type="password" class="form-control" name="password" placeholder="Password">
                             <label for="floatingPassword">Password</label>
                         </div>
                         <div class="d-grid mb-2">
-                            <a href="" class="btn btn-lg btn-dark">Sign In</a>
+                            <button type="sudmit" name="login_btn" class="btn btn-lg btn-dark">Sign In</button>
                         </div>
                         <div class="row">
                             <div class="col">
