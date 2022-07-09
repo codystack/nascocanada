@@ -1,6 +1,6 @@
 <?php
 include './components/dashboardheader.php';
-
+require_once './auth/profile.php';
 ?>
 
     <div class="offcanvas-wrap">
@@ -16,9 +16,20 @@ include './components/dashboardheader.php';
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="card bg-opaque-white">
+                                        <div class="card-header">
+                                            <div class="row g-2 g-xl-5 align-items-center">
+                                                <div class="col-md-6">
+                                                    <a href="dashboard" class="btn btn-with-icon btn-dark">
+                                                        <i class="bi bi-arrow-left"></i> Go Back
+                                                    </a>
+                                                </div>
+                                                <div class="col-md-6 text-md-end">
+                                                    <h3 class="fs-6">Profile</h3>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="card-body bg-white">
-                                            <h3 class="fs-6">Profile</h3>
-                                            <hr>
+                                            
                                             <?php
                                                 if (isset($_SESSION['error_message'])) {
                                                     ?>
@@ -61,13 +72,15 @@ include './components/dashboardheader.php';
                                                         $phone = $row['phone'];
                                                         $email = $row['email'];
                                                         $userID = $row['userID'];
+                                                    }
+                                                }
 
                                             ?>
 
                                             <form class="row g-2 g-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
                                                 <div class="col-md-6">
                                                     <label for="inputCity" class="form-label">First Name</label>
-                                                    <input type="text" class="form-control" name="firstName" placeholder="First Name" 
+                                                    <input type="text" class="form-control" required name="firstName" placeholder="First Name" 
                                                         value="<?php echo $firstName; if ($firstName == null) {
                                                         echo "Not Available";} 
                                                         ?> ">
@@ -75,23 +88,15 @@ include './components/dashboardheader.php';
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Last Name</label>
-                                                    <input type="text" class="form-control" name="lastName" placeholder="Last Name"
+                                                    <input type="text" class="form-control" required name="lastName" placeholder="Last Name"
                                                     value="<?php echo $lastName; if ($lastName == null) {
-                                                        echo "Not Available";} 
-                                                        ?> ">
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <label for="inputAddress" class="form-label">Company Name</label>
-                                                    <input type="text" class="form-control" name="companyName" placeholder="Company Name"
-                                                    value="<?php echo $companyName; if ($companyName == null) {
                                                         echo "Not Available";} 
                                                         ?> ">
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <label for="inputCity" class="form-label">Email</label>
-                                                    <input type="text" class="form-control" name="email" placeholder="Phone" 
+                                                    <input type="text" class="form-control" required name="email" placeholder="Phone" 
                                                     value="<?php echo $email; if ($email == null) {
                                                         echo "Not Available";} 
                                                         ?> ">
@@ -99,7 +104,7 @@ include './components/dashboardheader.php';
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Phone Number</label>
-                                                    <input type="text" class="form-control" name="phone" placeholder="Phone Number"
+                                                    <input type="text" class="form-control" required name="phone" placeholder="Phone Number"
                                                     value="<?php echo $phone; if ($phone == null) {
                                                         echo "Not Available";} 
                                                         ?> ">
@@ -107,25 +112,24 @@ include './components/dashboardheader.php';
 
                                                 <div class="col-md-4">
                                                     <label for="inputCountryCode" class="form-label">Security Code</label>
-                                                    <input type="text" class="form-control" name="userID" disabled placeholder="Security Code"
+                                                    <input type="text" class="form-control" required name="userID" disabled placeholder="Security Code"
                                                     value="<?php echo $userID; if ($userID == null) {
                                                         echo "Not Available";} 
                                                         ?> ">
                                                 </div>
 
                                                 <div class="col-md-8">
-                                                    <label for="inputPhoneNumber" class="form-label">Phone Number</label>
-                                                    <input type="text" class="form-control" id="inputPhoneNumber" placeholder="Phone Number">
+                                                    <label for="inputAddress" class="form-label">Company Name</label>
+                                                    <input type="text" class="form-control" required name="companyName" placeholder="Company Name"
+                                                    value="<?php echo $companyName; if ($companyName == null) {
+                                                        echo "Not Available";} 
+                                                        ?> ">
                                                 </div>
-
-                                                <div class="col-md-12 text-center">
-                                                    <button name="" type="submit" class="btn btn-lg btn-dark">Update Profile</button>
-                                                </div>
+                                                
+                                                <div></div>
+                                                <button name="update_profile_btn" type="submit" class="btn btn-lg btn-dark">Update Profile</button>
+                                                
                                             </form>
-                                            <?php 
-                                            }
-                                                }
-                                            ?>
                                         </div>
                                     </div>
                                 </div>
