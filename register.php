@@ -64,9 +64,19 @@ require_once './auth/account.php';
                                     <input type="text" class="form-control" required name="companyName" placeholder="roundupmedia">
                                     <label for="floatingInput">Company name</label>
                                 </div>
-                                <div class="form-floating mb-2">
-                                    <input type="email" class="form-control" required name="email" placeholder="name@example.com">
-                                    <label for="floatingInput">Email address</label>
+                                <div class="row g-2">
+                                    <div class="col-md">
+                                        <div class="form-floating mb-2">
+                                            <input type="email" class="form-control" required name="email" placeholder="name@example.com">
+                                            <label for="floatingInput">Email address</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md">
+                                        <div class="form-floating mb-2">
+                                            <input type="tel" class="form-control" required name="phone" placeholder="+0156748574">
+                                            <label for="floatingInput">Phone number</label>
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-floating mb-2">
                                     <input type="password" class="form-control" required name="password" placeholder="Password">

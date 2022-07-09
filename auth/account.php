@@ -59,6 +59,7 @@ if (isset($_POST['register_btn'])) {
     $lastName = $conn->real_escape_string($_POST['lastName']);
     $companyName = $conn->real_escape_string($_POST['companyName']);
     $email = $conn->real_escape_string($_POST['email']);
+    $phone = $conn->real_escape_string($_POST['phone']);
     $password = $conn->real_escape_string($_POST['password']);
     $userID = 'NAS'.rand(1000, 9999);
 
@@ -71,8 +72,8 @@ if (isset($_POST['register_btn'])) {
     }else {
         // Finally, register user if there are no errors in the form
         $password = sha1($password); //encrypt the password before saving in the database
-        $query = "INSERT INTO users (firstName, lastName, companyName, email, password, userID, status) 
-  			        VALUES('$firstName', '$lastName', '$companyName', '$email', '$password', '$userID', 'Active')";
+        $query = "INSERT INTO users (firstName, lastName, companyName, email, phone, password, userID, status) 
+  			        VALUES('$firstName', '$lastName', '$companyName', '$email', '$phone', '$password', '$userID', 'Active')";
         mysqli_query($conn, $query);
         if (mysqli_affected_rows($conn) > 0) {
 
