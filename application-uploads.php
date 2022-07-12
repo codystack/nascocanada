@@ -174,7 +174,7 @@ require_once './auth/application.php';
 
                                                 <label for="inputZip" class="form-label mb-0">Uses of funds</label>
                                                 <div class="col-md-6 input-group mt-0">
-                                                    <input type="file" required class="form-control" name="usesOfFunds">
+                                                    <input type="file" class="form-control" name="usesOfFunds">
                                                 </div>
 
                                                 <label for="inputZip" class="form-label mb-0">Proformas</label>

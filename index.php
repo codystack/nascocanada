@@ -87,7 +87,7 @@ include './components/navbar.php';
         <div class="container">
           <div class="row mb-5">
             <div class="col-12 text-center">
-              <h2 class="fw-bold">Expert Financial Products</h2>
+              <h2 class="fw-bold">Financial Products</h2>
             </div>
           </div>
           <div class="row g-3 g-xl-5">
