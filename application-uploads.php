@@ -219,8 +219,8 @@ require_once './auth/application.php';
                                                     <circle class="spin" fill="none" stroke="#0f9372" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6" r="73.9"/>
                                                 </svg>
                                             </div>
-                                            <h5 class="fs-6 mt-2">Financial Information Uploaded Successfully</h5>
-                                            <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Financial Information was uploaded successfully, <br>click on the button below to proceed to the next form.</p>
+                                            <h5 class="fs-6 mt-2">Doduments Uploaded Successfully</h5>
+                                            <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Documents was uploaded successfully, <br>click on the button below to proceed to the next form.</p>
                                             <a href="application-uploads" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
                                         </div>
                                         

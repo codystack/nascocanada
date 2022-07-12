@@ -56,7 +56,7 @@ include './components/navbar.php';
           <div class="row align-items-center justify-content-between">
             <div class="col-lg-6 mb-5 col-xl-5">
               <h2 class="fw-bold">$500 Billion+ funded by our network</h2>
-              <p class="text-secondary">NAS Consulting works with finders that provides customized finding solutions from $1 million to $100 billon across the capital stack. Project funding for real estate, energy, infrastructure, hospitality and more. Interest rate is as low as 3%.</p>
+              <p class="text-secondary">NAS Consulting Inc. works with finders that provides customized funding solutions from $1 million to $100 billon across the capital stack. Project funding for real estate, energy, infrastructure, hospitality and more at very low Interest rate.</p>
             </div>
             <div class="col-lg-6 mb-lg-0">
               <div class="frame">
