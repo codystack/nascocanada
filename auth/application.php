@@ -272,7 +272,7 @@ if (isset($_POST['upload_btn'])) {
     if (preg_match("!pdf!", $_FILES['profileOfContractor']['type'])) {
         $checker ++;
     }
-    if ($checker < 2) { 
+    if ($checker < 7) { 
         exit;
     }
 
@@ -283,7 +283,7 @@ if (isset($_POST['upload_btn'])) {
     }else {
         // Finally, insert the information if there are no errors in the form
         $query = "INSERT INTO upload (userID, executiveSummary, totalSources, usesOfFunds, proformas, profileOfSponsors, profileOfDevelopers, profileOfContractor, status) 
-  			        VALUES('$userID', '$executiveSummary', '$totalSources', '$usesOfFunds', '$proformas', '$profileOfSponsors', '$profileOfDevelopers', '$profileOfContractor', 'Filled')";
+  			        VALUES('$userID', '$executiveSummary_path', '$totalSources_path', '$usesOfFunds_path', '$proformas_path', '$profileOfSponsors_path', '$profileOfDevelopers_path', '$profileOfContractor_path', 'Filled')";
         mysqli_query($conn, $query);
         if (mysqli_affected_rows($conn) > 0) {
 
