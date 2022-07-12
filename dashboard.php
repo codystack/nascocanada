@@ -10,7 +10,27 @@ require_once './auth/account.php';
                 <div class="row justify-content-between">
                     <div class="col-lg-8 mx-auto">
 
-                        <h4 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h4>
+                        <div class="row g-2 g-xl-5 align-items-center">
+                            <div class="col-md-6">
+                                <h4 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h4>
+                            </div>
+                            <?php
+
+                                $select_query = "SELECT * FROM upload WHERE userID ='".$_SESSION['id']."'";
+                                $result = mysqli_query($conn, $select_query);
+                                if (mysqli_num_rows($result) > 0) {
+                                    // output data of each row
+                                    while($row = mysqli_fetch_assoc($result)) {
+                                        $id = $row['id'];
+                                        $status = $row['status'];
+                                    }
+                                }
+                            ?>
+                            <div class="col-md-6 text-md-end">
+                                <?php if($status=='Filled'){echo '<span class="badge rounded-pill bg-warning text-dark">Loan Review Pending</span>';}?>
+                                
+                            </div>
+                        </div>
 
                         <section>
                             <div class="col-xl-12">

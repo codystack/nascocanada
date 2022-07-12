@@ -12,7 +12,7 @@ include './components/navbar.php';
           <div class="row align-items-center justify-content-center justify-content-lg-end my-auto">
             <div class="col-md-8 col-lg-5 text-center text-lg-start">
               <span class="badge bg-opaque-yellow text-yellow rounded-pill">North American Strategy Consulting Ltd</span>
-              <h1 class="display-2 fw-bold lh-sm my-2 my-xl-4">Access financial funding globally.</h1>
+              <h1 class="display-2 fw-bold lh-sm my-2 my-xl-4">Access funding Globally</h1>
               <a href="register" class="btn btn-with-icon btn-yellow">Get Started <i
                   class="bi bi-arrow-right"></i>
               </a>
@@ -44,7 +44,7 @@ include './components/navbar.php';
             </div>
             <div class="col-lg-6 col-xl-5">
               <h2 class="fw-bold">Custom Funding Solution</h2>
-              <p class="text-secondary">NAS Consulting works with finders that provides customized finding solutions from $1 million to $100 billon across the capital stack. Project funding for real estate, energy, infrastructure, hospitality and more. Interest rate is as low as 3%.</p>
+              <p class="text-secondary">NAS Consulting Inc. works with finders that provides customized funding solutions from $1 million to $100 billon across the capital stack. Project funding for real estate, energy, infrastructure, hospitality and more at very low Interest rate.</p>
             </div>
           </div>
         </div>
@@ -284,7 +284,7 @@ include './components/navbar.php';
         <div class="container level-1">
           <div class="row justify-content-center">
             <div class="col-lg-8 col-xl-6 text-center">
-              <h2 class="mb-5">Access financial funding globally for your business.</h2>
+              <h2 class="mb-5">Access funding globally for your business.</h2>
               <a href="register" class="btn btn-with-icon btn-yellow">Get Started <i class="bi bi-arrow-right"></i></a>
             </div>
           </div>

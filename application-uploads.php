@@ -108,13 +108,13 @@ require_once './auth/application.php';
                                                     </a>
                                                 </div>
                                                 <div class="col-md-6 text-md-end">
-                                                    <h3 class="fs-6">Financial Information</h3>
+                                                    <h3 class="fs-6">Document Uploads</h3>
                                                 </div>
                                             </div>
                                         </div>
                                         <?php
 
-                                            $select_query = "SELECT * FROM finance WHERE userID ='".$_SESSION['id']."'";
+                                            $select_query = "SELECT * FROM upload WHERE userID ='".$_SESSION['id']."'";
                                             $result = mysqli_query($conn, $select_query);
                                             if (mysqli_num_rows($result) > 0) {
                                                 // output data of each row
@@ -153,73 +153,52 @@ require_once './auth/application.php';
                                                 }
                                             ?>
 
-                                            <form class="row g-2 g-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
-
+                                            <form class="row g-2 g-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
+                                                
+                                                <p class="text-dark fw-light fs-6"><i class="bi bi-info-circle"></i> <d>Note</d> that only PDF file formats are approved to be uploaded.</p>
                                             
                                                 <div class="col-md-12" style="display: none;">
                                                     <label for="inputZip" class="form-label">User ID</label>
                                                     <input type="text" class="form-control" required name="userID" value="<? echo $_SESSION['id']; ?>" readonly>
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Company Auditor</label>
-                                                    <input type="text" class="form-control" required name="companyAuditor" placeholder="Company Auditor">
+                                                <label for="inputZip" class="form-label mb-0">Executive summary</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" required class="form-control" name="executiveSummary">
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Auditor's Phone No.</label>
-                                                    <input type="text" class="form-control" required name="auditorPhone" placeholder="Auditor's Phone No.">
+                                                <label for="inputZip" class="form-label mb-0">Total sources</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" class="form-control" name="totalSources">
                                                 </div>
 
-                                                <div class="col-md-12">
-                                                    <label for="inputZip" class="form-label">Auditor's Address</label>
-                                                    <input type="text" class="form-control" required name="auditorAddress" placeholder="Auditor's Address">
+                                                <label for="inputZip" class="form-label mb-0">Uses of funds</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" required class="form-control" name="usesOfFunds">
                                                 </div>
 
-                                                <h5 class="fs-6">Company Principal Banks/Financiers</h5>
-
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Name</label>
-                                                    <input type="text" class="form-control" required name="firstFinanciersName" placeholder="Name">
+                                                <label for="inputZip" class="form-label mb-0">Proformas</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" class="form-control" name="proformas">
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Address</label>
-                                                    <input type="text" class="form-control" required name="firstFinanciersAddress" placeholder="Address">
+                                                <label for="inputZip" class="form-label mb-0">Profile & CV of Sponsors</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" class="form-control" name="profileOfSponsors">
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Bank Contact</label>
-                                                    <input type="text" class="form-control" required name="firstFinanciersBankCntact" placeholder="Bank Contact">
+                                                <label for="inputZip" class="form-label mb-0">Profile & CV of Developers</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" class="form-control" name="profileOfDevelopers">
                                                 </div>
 
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Phone</label>
-                                                    <input type="text" class="form-control" required name="firstFinanciersPhone" placeholder="Phone">
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Name</label>
-                                                    <input type="text" class="form-control" required name="secondFinanciersName" placeholder="Name">
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Address</label>
-                                                    <input type="text" class="form-control" required name="secondFinanciersAddress" placeholder="Address">
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Bank Contact</label>
-                                                    <input type="text" class="form-control" required name="secondFinanciersBankContact" placeholder="Bank Contact">
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Phone</label>
-                                                    <input type="text" class="form-control" required name="secondFinanciersPhone" placeholder="Phone">
-                                                </div>                                                
+                                                <label for="inputZip" class="form-label mb-0">Profile & CV of Contractor</label>
+                                                <div class="col-md-6 input-group mt-0">
+                                                    <input type="file" class="form-control" name="profileOfContractor">
+                                                </div>                                           
 
                                                 <div class="d-grid mb-2">
-                                                    <button name="finance_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                    <button name="upload_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
                                                 </div>
 
                                             </form>

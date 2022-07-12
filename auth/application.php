@@ -119,7 +119,7 @@ if (isset($_POST['directors_profile_btn'])) {
         mysqli_query($conn, $query);
         if (mysqli_affected_rows($conn) > 0) {
 
-            $_SESSION['success_message'] = "Shareholders Infromation Completed!";
+            $_SESSION['success_message'] = "Directors Infromation Completed!";
             echo "<meta http-equiv='refresh' content='3; URL=application-directors-profile'>";
         }else {
             $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
@@ -158,7 +158,7 @@ if (isset($_POST['management_btn'])) {
         mysqli_query($conn, $query);
         if (mysqli_affected_rows($conn) > 0) {
 
-            $_SESSION['success_message'] = "Shareholders Infromation Completed!";
+            $_SESSION['success_message'] = "Management Infromation Completed!";
             echo "<meta http-equiv='refresh' content='3; URL=application-management'>";
         }else {
             $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
@@ -197,7 +197,106 @@ if (isset($_POST['finance_btn'])) {
         mysqli_query($conn, $query);
         if (mysqli_affected_rows($conn) > 0) {
 
-            $_SESSION['success_message'] = "Shareholders Infromation Completed!";
+            $_SESSION['success_message'] = "Finance Infromation Completed!";
+            echo "<meta http-equiv='refresh' content='3; URL=application-finance'>";
+        }else {
+            $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
+            echo "<meta http-equiv='refresh' content='5; URL=application-finance'>";
+        }
+    }
+}
+
+
+// Upload script
+if (isset($_POST['upload_btn'])) {
+
+    $userID = $conn->real_escape_string($_POST['userID']);
+    $executiveSummary_path = $conn->real_escape_string('upload/'.$_FILES['executiveSummary']['name']);
+    $totalSources_path  = $conn->real_escape_string('upload/'.$_FILES['totalSources']['name']);
+    $usesOfFunds_path  = $conn->real_escape_string('upload/'.$_FILES['usesOfFunds']['name']);
+    $proformas_path  = $conn->real_escape_string('upload/'.$_FILES['proformas']['name']);
+    $profileOfSponsors_path  = $conn->real_escape_string('upload/'.$_FILES['profileOfSponsors']['name']);
+    $profileOfDevelopers_path  = $conn->real_escape_string('upload/'.$_FILES['profileOfDevelopers']['name']);
+    $profileOfContractor_path  = $conn->real_escape_string('upload/'.$_FILES['profileOfContractor']['name']);
+    $status = $conn->real_escape_string($_POST['status']);
+
+    if (file_exists($executiveSummary_path)) {
+        $executiveSummary_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['executiveSummary']['name']);
+    }
+
+    if (file_exists($totalSources_path)) {
+        $totalSources_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['totalSources']['name']);
+    }
+
+    if (file_exists($usesOfFunds_path)) {
+        $usesOfFunds = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['usesOfFunds']['name']);
+    }
+
+    if (file_exists($proformas_path)) {
+        $proformas_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['proformas']['name']);
+    }
+
+    if (file_exists($profileOfSponsors_path)) {
+        $profileOfSponsors_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['profileOfSponsors']['name']);
+    }
+
+    if (file_exists($profileOfDevelopers_path)) {
+        $profileOfDevelopers_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['profileOfDevelopers']['name']);
+    }
+
+    if (file_exists($profileOfContractor_path)) {
+        $profileOfContractor_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['profileOfContractor']['name']);
+    }
+
+    $checker = 0;
+
+    //make sure file type is image
+    if (preg_match("!pdf!", $_FILES['executiveSummary']['type'])) {
+        $checker ++;
+    }
+    if (preg_match("!pdf!", $_FILES['totalSources']['type'])) {
+        $checker ++;
+    }
+    if (preg_match("!pdf!", $_FILES['usesOfFunds']['type'])) {
+        $checker ++;
+    }
+    if (preg_match("!pdf!", $_FILES['proformas']['type'])) {
+        $checker ++;
+    }
+    if (preg_match("!pdf!", $_FILES['profileOfSponsors']['type'])) {
+        $checker ++;
+    }
+    if (preg_match("!pdf!", $_FILES['profileOfDevelopers']['type'])) {
+        $checker ++;
+    }
+    if (preg_match("!pdf!", $_FILES['profileOfContractor']['type'])) {
+        $checker ++;
+    }
+    if ($checker < 2) { 
+        exit;
+    }
+
+    $check_user_query = "SELECT * FROM upload WHERE userID='".$_SESSION['id']."'";
+    $result = mysqli_query($conn, $check_user_query);
+    if (mysqli_num_rows($result) > 0) {
+        echo "<meta http-equiv='refresh' content='5; URL=application-uploads'>";
+    }else {
+        // Finally, insert the information if there are no errors in the form
+        $query = "INSERT INTO upload (userID, executiveSummary, totalSources, usesOfFunds, proformas, profileOfSponsors, profileOfDevelopers, profileOfContractor, status) 
+  			        VALUES('$userID', '$executiveSummary', '$totalSources', '$usesOfFunds', '$proformas', '$profileOfSponsors', '$profileOfDevelopers', '$profileOfContractor', 'Filled')";
+        mysqli_query($conn, $query);
+        if (mysqli_affected_rows($conn) > 0) {
+
+            //copy image to upload folder
+            copy($_FILES['executiveSummary']['tmp_name'], $executiveSummary_path);
+            copy($_FILES['totalSources']['tmp_name'], $totalSources_path);
+            copy($_FILES['usesOfFunds']['tmp_name'], $usesOfFunds_path);
+            copy($_FILES['proformas']['tmp_name'], $proformas_path);
+            copy($_FILES['profileOfSponsors']['tmp_name'], $profileOfSponsors_path);
+            copy($_FILES['profileOfDevelopers']['tmp_name'], $profileOfDevelopers_path);
+            copy($_FILES['profileOfContractor']['tmp_name'], $profileOfContractor_path);
+
+            $_SESSION['success_message'] = "Upload Infromation Completed!";
             echo "<meta http-equiv='refresh' content='3; URL=application-finance'>";
         }else {
             $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
