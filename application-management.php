@@ -108,13 +108,13 @@ require_once './auth/application.php';
                                                     </a>
                                                 </div>
                                                 <div class="col-md-6 text-md-end">
-                                                    <h3 class="fs-6">Business Information</h3>
+                                                    <h3 class="fs-6">Senior Management Information</h3>
                                                 </div>
                                             </div>
                                         </div>
                                         <?php
 
-                                            $select_query = "SELECT * FROM business WHERE userID ='".$_SESSION['id']."'";
+                                            $select_query = "SELECT * FROM management WHERE userID ='".$_SESSION['id']."'";
                                             $result = mysqli_query($conn, $select_query);
                                             if (mysqli_num_rows($result) > 0) {
                                                 // output data of each row
@@ -161,87 +161,58 @@ require_once './auth/application.php';
                                                     <input type="text" class="form-control" required name="userID" value="<? echo $_SESSION['id']; ?>" readonly>
                                                 </div>
 
-                                                <div class="col-md-8">
-                                                    <label for="inputZip" class="form-label">Company Name</label>
-                                                    <input type="text" class="form-control" required name="companyName" placeholder="Company Name">
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <label for="inputZip" class="form-label">Title Held in Business</label>
-                                                    <input type="text" class="form-control" required name="titleHeld" placeholder="Title Held in Business">
-                                                </div>
-
-                                                <div class="col-md-12">
-                                                    <label for="inputZip" class="form-label">Company Address</label>
-                                                    <input type="text" class="form-control" required name="companyAddress" placeholder="Company Address">
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <label for="inputZip" class="form-label">Telephone</label>
-                                                    <input type="tel" class="form-control" name="telephone" placeholder="Telephone">
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <label for="inputZip" class="form-label">Mobile</label>
-                                                    <input type="tel" class="form-control" required name="mobile" placeholder="Mobile">
-                                                </div>
-
-                                                <div class="col-md-4">
-                                                    <label for="inputZip" class="form-label">FAX</label>
-                                                    <input type="text" class="form-control" name="fax" placeholder="FAX">
+                                                <div class="col-md-6">
+                                                    <label for="inputZip" class="form-label">First Name</label>
+                                                    <input type="text" class="form-control" required name="firstName" placeholder="First Name">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Company's Principal Business</label>
-                                                    <input type="text" class="form-control" name="companyPrincipalBusiness" placeholder="Company's Principal Business">
+                                                    <label for="inputZip" class="form-label">Designation</label>
+                                                    <input type="text" class="form-control" required name="firstNameDesignation" placeholder="First Name Designation">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Years in Business</label>
-                                                    <input type="text" class="form-control" name="yearsInBusiness" placeholder="Years in Business">
+                                                    <label for="inputZip" class="form-label">Second Name</label>
+                                                    <input type="text" class="form-control" name="secondName" placeholder="Second Name">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="inputCountry" class="form-label">Type of Company</label>
-                                                    <select id="inputCountry" class="form-select" name="typeOfCompany">
-                                                        <option value="Multinational">Multinational</option>
-                                                        <option value="Partnership">Partnership</option>
-                                                        <option value="Sole Proprietorship">Sole Proprietorship</option>
-                                                        <option value="Public Company (PLC)">Public Company (PLC)</option>
-                                                        <option value="Private Company (LTD)">Private Company (LTD)</option>
-                                                    </select>
+                                                    <label for="inputZip" class="form-label">Designation</label>
+                                                    <input type="text" class="form-control" name="secondNameDesignation" placeholder="Second Name Designation">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="inputCountry" class="form-label">Ownership Structure</label>
-                                                    <select id="inputCountry" class="form-select" name="ownershipStructure">
-                                                        <option value="100% Foreign Affiliates">100% Foreign Affiliates</option>
-                                                        <option value="Nigerian with Foreign Affiliates">Nigerian with Foreign Affiliates</option>
-                                                        <option value="100% Nigerian (Limited Liability)">100% Nigerian (Limited Liability)</option>
-                                                        <option value="100% Nigerian (Sole Propietorship/Partnership)">100% Nigerian (Sole Propietorship/Partnership)</option>
-                                                    </select>
+                                                    <label for="inputZip" class="form-label">Third Name</label>
+                                                    <input type="text" class="form-control" name="thirdName" placeholder="Third Name">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Number of years in Business</label>
-                                                    <input type="text" class="form-control" name="numberOfYearsInBusiness" placeholder="Number of years in Business">
+                                                    <label for="inputZip" class="form-label">Designation</label>
+                                                    <input type="text" class="form-control" name="thirdNameDesignation" placeholder="Third Name Designation">
                                                 </div>
 
                                                 <div class="col-md-6">
-                                                    <label for="inputZip" class="form-label">Company Size (Number of Current Staff)</label>
-                                                    <input type="text" class="form-control" name="companySize" placeholder="Company Size">
+                                                    <label for="inputZip" class="form-label">Fourth Name</label>
+                                                    <input type="text" class="form-control" name="fourthName" placeholder="Fourth Name">
                                                 </div>
 
-                                                <div class="col-md-12">
-                                                    <label for="inputCountry" class="form-label">Is the Company Quoted on Nigeria Stock Exchange</label>
-                                                    <select id="inputCountry" class="form-select" name="stockExchange">
-                                                        <option value="Yes">Yes</option>
-                                                        <option value="No">No</option>
-                                                    </select>
+                                                <div class="col-md-6">
+                                                    <label for="inputZip" class="form-label">Designation</label>
+                                                    <input type="text" class="form-control" name="fourthNameDesignation" placeholder="Fourth Name Designation">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="inputZip" class="form-label">Fifth Name</label>
+                                                    <input type="text" class="form-control" name="fifthName" placeholder="Fifth Name">
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <label for="inputZip" class="form-label">Designation</label>
+                                                    <input type="text" class="form-control" name="fifthNameDesignation" placeholder="Fifth Name Designation">
                                                 </div>
 
                                                 <div class="d-grid mb-2">
-                                                    <button name="business_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                    <button name="management_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
                                                 </div>
 
                                             </form>
@@ -262,9 +233,9 @@ require_once './auth/application.php';
                                                     <circle class="spin" fill="none" stroke="#0f9372" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6" r="73.9"/>
                                                 </svg>
                                             </div>
-                                            <h5 class="fs-6 mt-2">Business Information Uploaded Successfully</h5>
-                                            <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Business Information was uploaded successfully, <br>click on the button below to proceed to the next form.</p>
-                                            <a href="application-shareholders" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
+                                            <h5 class="fs-6 mt-2">Senior Management Information Uploaded Successfully</h5>
+                                            <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Senior Management Information was uploaded successfully, <br>click on the button below to proceed to the next form.</p>
+                                            <a href="application-finance" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
                                         </div>
                                         
                                     </div>

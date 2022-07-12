@@ -10,7 +10,7 @@ require_once './auth/profile.php';
                 <div class="row justify-content-between">
                     <div class="col-lg-8 mx-auto">
 
-                        <h3 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h3>
+                        <h4 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h4>
 
                         <section>
                             <div class="row">
@@ -37,7 +37,6 @@ require_once './auth/profile.php';
                                                         <div class="alert-message text-center">
                                                             <?php
                                                             echo $_SESSION['error_message'];
-                                                            session_destroy();
                                                             ?>
                                                         </div>
                                                     </div>
@@ -72,8 +71,6 @@ require_once './auth/profile.php';
                                                         $phone = $row['phone'];
                                                         $email = $row['email'];
                                                         $userID = $row['userID'];
-                                                    }
-                                                }
 
                                             ?>
 
@@ -126,10 +123,15 @@ require_once './auth/profile.php';
                                                         ?> ">
                                                 </div>
                                                 
-                                                <div></div>
-                                                <button name="update_profile_btn" type="submit" class="btn btn-lg btn-dark">Update Profile</button>
+                                                <div class="d-grid mb-2">
+                                                    <button name="update_profile_btn" type="submit" class="btn btn-lg btn-dark">Update Profile</button>
+                                                </div>
                                                 
                                             </form>
+                                            <?php
+                                                    }
+                                                }
+                                            ?>
                                         </div>
                                     </div>
                                 </div>

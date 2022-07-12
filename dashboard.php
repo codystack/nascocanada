@@ -10,7 +10,7 @@ require_once './auth/account.php';
                 <div class="row justify-content-between">
                     <div class="col-lg-8 mx-auto">
 
-                        <h3 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h3>
+                        <h4 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h4>
 
                         <section>
                             <div class="col-xl-12">
@@ -25,7 +25,7 @@ require_once './auth/account.php';
                                                             <img src="assets/images/apply.svg" alt="Logo" class="mb-2 w-40">
                                                         </div>
                                                         <div class="card-footer pt-0 mt-auto">
-                                                            <h4 class="card-title fw-light">APPLICATION</h4>
+                                                            <h4 class="card-title fw-light">Application</h4>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -38,7 +38,7 @@ require_once './auth/account.php';
                                                             <img src="assets/images/user.svg" alt="Logo" class="mb-2 w-40">
                                                         </div>
                                                         <div class="card-footer pt-0 mt-auto">
-                                                            <h4 class="card-title fw-light">ACCOUNT</h4>
+                                                            <h4 class="card-title fw-light">Account</h4>
                                                         </div>
                                                     </div>
                                                 </a>
@@ -64,30 +64,12 @@ require_once './auth/account.php';
                                                             <img src="assets/images/power.svg" alt="Logo" class="mb-2 w-40">
                                                         </div>
                                                         <div class="card-footer pt-0 mt-auto">
-                                                            <h4 class="card-title fw-light">LOG OUT</h4>
+                                                            <h4 class="card-title fw-light">Log Out</h4>
                                                         </div>
                                                     </div>
                                                 </a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="component-1-2" role="tabpanel" aria-labelledby="component-1-2-tab">
-                                        <h5>Second tab content here ..</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime excepturi amet rem! Ab incidunt quod
-                                        nobis nisi quas? Magnam laudantium eveniet nostrum quaerat corporis error saepe aperiam accusantium
-                                        alias cumque?</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="component-1-3" role="tabpanel" aria-labelledby="component-1-3-tab">
-                                        <h5>Third tab content here ..</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime excepturi amet rem! Ab incidunt quod
-                                        nobis nisi quas? Magnam laudantium eveniet nostrum quaerat corporis error saepe aperiam accusantium
-                                        alias cumque?</p>
-                                    </div>
-                                    <div class="tab-pane fade" id="component-1-4" role="tabpanel" aria-labelledby="component-1-4-tab">
-                                        <h5>Fourth tab content here ..</h5>
-                                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maxime excepturi amet rem! Ab incidunt quod
-                                        nobis nisi quas? Magnam laudantium eveniet nostrum quaerat corporis error saepe aperiam accusantium
-                                        alias cumque?</p>
                                     </div>
                                 </div>
                             </div>

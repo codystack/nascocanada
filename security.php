@@ -10,7 +10,7 @@ require_once './auth/password.php';
                 <div class="row justify-content-between">
                     <div class="col-lg-8 mx-auto">
 
-                        <h3 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h3>
+                        <h4 class="mb-3">Welcome, <?php echo $_SESSION['firstName']; ?>!</h4>
 
                         <section>
                             <div class="row">
@@ -36,7 +36,6 @@ require_once './auth/password.php';
                                                         <div class="alert-message text-center">
                                                             <?php
                                                             echo $_SESSION['error_message'];
-                                                            session_destroy();
                                                             ?>
                                                         </div>
                                                     </div>
@@ -68,10 +67,11 @@ require_once './auth/password.php';
                                                 <div class="col-md-12">
                                                     <label for="inputRepeatNewPass" class="form-label">Repeat New Password</label>
                                                     <input type="password" class="form-control" required name="confirmpassword" id="confirmpassword">
-                                                    <div class="mt-4"><span id='message'></span></div>
                                                 </div>
-                                                    
-                                                <button class="btn btn-dark" name="password_change_btn" type="submit">Change password</button>
+                                                <div class="d-grid mb-2">
+                                                    <button class="btn btn-dark" name="password_change_btn" type="submit">Change password</button>
+                                                </div>
+
                                             </form>
                                         </div>
                                     </div>
