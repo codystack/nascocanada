@@ -158,22 +158,22 @@ require_once './auth/application.php';
                                             
                                                 <div class="col-md-12" style="display: none;">
                                                     <label for="inputZip" class="form-label">User ID</label>
-                                                    <input type="text" class="form-control" required name="userID" value="<? echo $_SESSION['id']; ?>" readonly>
+                                                    <input type="text" class="form-control" name="userID" value="<? echo $_SESSION['id']; ?>" readonly>
                                                 </div>
 
                                                 <div class="col-md-8">
                                                     <label for="inputZip" class="form-label">Company Name</label>
-                                                    <input type="text" class="form-control" required name="companyName" placeholder="Company Name">
+                                                    <input type="text" class="form-control" name="companyName" placeholder="Company Name">
                                                 </div>
 
                                                 <div class="col-md-4">
                                                     <label for="inputZip" class="form-label">Title Held in Business</label>
-                                                    <input type="text" class="form-control" required name="titleHeld" placeholder="Title Held in Business">
+                                                    <input type="text" class="form-control" name="titleHeld" placeholder="Title Held in Business">
                                                 </div>
 
                                                 <div class="col-md-12">
                                                     <label for="inputZip" class="form-label">Company Address</label>
-                                                    <input type="text" class="form-control" required name="companyAddress" placeholder="Company Address">
+                                                    <input type="text" class="form-control" name="companyAddress" placeholder="Company Address">
                                                 </div>
 
                                                 <div class="col-md-4">
@@ -183,7 +183,7 @@ require_once './auth/application.php';
 
                                                 <div class="col-md-4">
                                                     <label for="inputZip" class="form-label">Mobile</label>
-                                                    <input type="tel" class="form-control" required name="mobile" placeholder="Mobile">
+                                                    <input type="tel" class="form-control" name="mobile" placeholder="Mobile">
                                                 </div>
 
                                                 <div class="col-md-4">
@@ -232,16 +232,21 @@ require_once './auth/application.php';
                                                     <input type="text" class="form-control" name="companySize" placeholder="Company Size">
                                                 </div>
 
-                                                <div class="col-md-12">
+                                                <!-- <div class="col-md-12">
                                                     <label for="inputCountry" class="form-label">Is the Company Quoted on Nigeria Stock Exchange</label>
                                                     <select id="inputCountry" class="form-select" name="stockExchange">
                                                         <option value="Yes">Yes</option>
                                                         <option value="No">No</option>
                                                     </select>
-                                                </div>
+                                                </div> -->
 
-                                                <div class="d-grid mb-2">
-                                                    <button name="business_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                <div class="row g-2 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <button name="business_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <a href="application-shareholders" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
 
                                             </form>

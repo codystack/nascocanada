@@ -195,10 +195,15 @@ require_once './auth/application.php';
                                                 <label for="inputZip" class="form-label mb-0">Profile & CV of Contractor</label>
                                                 <div class="col-md-6 input-group mt-0">
                                                     <input type="file" class="form-control" name="profileOfContractor">
-                                                </div>                                           
-
-                                                <div class="d-grid mb-2">
-                                                    <button name="upload_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                </div>
+                                                
+                                                <div class="row g-2 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <button name="upload_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <a href="application-completed" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
 
                                             </form>
@@ -222,6 +227,14 @@ require_once './auth/application.php';
                                             <h5 class="fs-6 mt-2">Doduments Uploaded Successfully</h5>
                                             <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Documents was uploaded successfully, <br>click on the button below to proceed to the next form.</p>
                                             <a href="application-uploads" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
+                                            <div class="row g-2 align-items-center">
+                                                <div class="col-md-6">
+                                                    <button name="upload_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                </div>
+                                                <div class="col-md-6 text-md-end">
+                                                    <a href="application-completed" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                </div>
+                                            </div>
                                         </div>
                                         
                                     </div>

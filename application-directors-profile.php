@@ -163,22 +163,22 @@ require_once './auth/application.php';
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Director One</label>
-                                                    <input type="text" class="form-control" required name="directorOne" placeholder="Director One">
+                                                    <input type="text" class="form-control" name="directorOne" placeholder="Director One">
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Director One Professional Qualification</label>
-                                                    <input type="text" class="form-control" required name="directorOneProfessionalQualification" placeholder="Director One Professional Qualification">
+                                                    <input type="text" class="form-control" name="directorOneProfessionalQualification" placeholder="Director One Professional Qualification">
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Director One Country of Origin</label>
-                                                    <input type="text" class="form-control" required name="directorOneCountryOfOrigin" placeholder="Director One Country of Origin">
+                                                    <input type="text" class="form-control" name="directorOneCountryOfOrigin" placeholder="Director One Country of Origin">
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Director One Year of Experience</label>
-                                                    <input type="text" class="form-control" required name="directorOneYearOfExperience" placeholder="Director One Year of Experience">
+                                                    <input type="text" class="form-control" name="directorOneYearOfExperience" placeholder="Director One Year of Experience">
                                                 </div>
 
                                                 <div class="col-md-6">
@@ -261,8 +261,13 @@ require_once './auth/application.php';
                                                     <input type="text" class="form-control" name="directorFiveYearOfExperience" placeholder="Director Five Year of Experience">
                                                 </div>
 
-                                                <div class="d-grid mb-2">
-                                                    <button name="directors_profile_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                <div class="row g-2 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <button name="directors_profile_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <a href="application-management" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
 
                                             </form>

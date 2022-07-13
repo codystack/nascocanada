@@ -216,10 +216,15 @@ require_once './auth/application.php';
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Phone</label>
                                                     <input type="text" class="form-control" required name="secondFinanciersPhone" placeholder="Phone">
-                                                </div>                                                
-
-                                                <div class="d-grid mb-2">
-                                                    <button name="finance_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                </div>
+                                                
+                                                <div class="row g-2 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <button name="finance_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <a href="application-uploads" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
 
                                             </form>

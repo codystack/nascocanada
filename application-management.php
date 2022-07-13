@@ -163,12 +163,12 @@ require_once './auth/application.php';
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">First Name</label>
-                                                    <input type="text" class="form-control" required name="firstName" placeholder="First Name">
+                                                    <input type="text" class="form-control" name="firstName" placeholder="First Name">
                                                 </div>
 
                                                 <div class="col-md-6">
                                                     <label for="inputZip" class="form-label">Designation</label>
-                                                    <input type="text" class="form-control" required name="firstNameDesignation" placeholder="First Name Designation">
+                                                    <input type="text" class="form-control" name="firstNameDesignation" placeholder="First Name Designation">
                                                 </div>
 
                                                 <div class="col-md-6">
@@ -211,8 +211,13 @@ require_once './auth/application.php';
                                                     <input type="text" class="form-control" name="fifthNameDesignation" placeholder="Fifth Name Designation">
                                                 </div>
 
-                                                <div class="d-grid mb-2">
-                                                    <button name="management_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                <div class="row g-2 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <button name="management_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <a href="application-finance" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
 
                                             </form>

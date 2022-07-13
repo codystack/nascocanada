@@ -163,12 +163,12 @@ require_once './auth/application.php';
 
                                                 <div class="col-md-7">
                                                     <label for="inputZip" class="form-label">Shareholder One</label>
-                                                    <input type="text" class="form-control" required name="shareholderOne" placeholder="Shareholder One">
+                                                    <input type="text" class="form-control" name="shareholderOne" placeholder="Shareholder One">
                                                 </div>
 
                                                 <div class="col-md-5">
                                                     <label for="inputZip" class="form-label">Shareholder One Percentage</label>
-                                                    <input type="text" class="form-control" required name="shareholderOnePercentage" placeholder="Shareholder One Percentage">
+                                                    <input type="text" class="form-control" name="shareholderOnePercentage" placeholder="Shareholder One Percentage">
                                                 </div>
 
                                                 <div class="col-md-7">
@@ -201,9 +201,13 @@ require_once './auth/application.php';
                                                     <input type="text" class="form-control" name="shareholderFourPercentage" placeholder="Shareholder Four Percentage">
                                                 </div>
                                                 
-
-                                                <div class="d-grid mb-2">
-                                                    <button name="shareholder_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
+                                                <div class="row g-2 align-items-center">
+                                                    <div class="col-md-6">
+                                                        <button name="shareholder_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
+                                                    </div>
+                                                    <div class="col-md-6 text-md-end">
+                                                        <a href="application-directors-profile" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
+                                                    </div>
                                                 </div>
 
                                             </form>

@@ -90,8 +90,12 @@ require_once './auth/account.php';
                                                 </a>
                                             </div>
 
-                                            <div class="col-md-12 text-center">
-                                                <p class="text-dark fw-light fs-6">Connect with a customer care Representative. <br> <a href="mailto:info@nascocanada.ca"><b>Mail</b></a> or <a href="https://wa.me/message/PGASK7RR2QX3D1"><b>WhatsApp</b></a></p>
+                                            <div class="col-md-12">
+                                                <div class="card-wrap text-center equal-md-16-9 bg-white">
+                                                    <div class="card-body">
+                                                        <p class="text-dark fw-light fs-6">Connect with a customer care Representative. <br> <a href="mailto:info@nascocanada.ca"><b>Mail</b></a> or <a href="https://wa.me/message/PGASK7RR2QX3D1"><b>WhatsApp</b></a></p>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
