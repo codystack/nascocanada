@@ -66,7 +66,7 @@
                     It is NOT our decision to approve or deny you funding<br>
                 </div>
                 <div class="text-center pb-5">
-                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">I have read and i agree to the terms</button>
+                    <button type="button" class="btn btn-dark" data-bs-dismiss="modal">I have read and I agree to the terms</button>
                 </div>
             </div>
         </div>
