@@ -39,7 +39,7 @@ require_once './auth/account.php';
                                         aria-labelledby="component-1-1-tab">
                                         <div class="row g-3 g-xl-5">
                                             <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
-                                                <a href="application" class="card equal-md-4-3 card-hover-border bg-white">
+                                                <a href="intake-form" class="card equal-md-4-3 card-hover-border bg-white">
                                                     <div class="card-wrap text-center">
                                                         <div class="card-header pb-0">
                                                             <img src="assets/images/apply.svg" alt="Logo" class="mb-2 w-40">
@@ -114,6 +114,7 @@ require_once './auth/account.php';
 
   <script src="https://cube.webuildthemes.com/assets/js/vendor.bundle.js"></script>
   <script src="https://cube.webuildthemes.com/assets/js/index.bundle.js"></script>
+  <script src="//code.tidio.co/8xtfxxzxdhc6h2gg58onasl3cgtqy7g2.js" async></script>
 
 </body>
 

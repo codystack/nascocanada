@@ -230,5 +230,6 @@ include './components/navbar-light.php';
 
   <script src="assets/js/vendor.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="//code.tidio.co/8xtfxxzxdhc6h2gg58onasl3cgtqy7g2.js" async></script>
 
 </body></html>

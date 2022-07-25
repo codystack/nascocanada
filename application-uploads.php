@@ -197,14 +197,19 @@ require_once './auth/application.php';
                                                     <input type="file" class="form-control" name="profileOfContractor">
                                                 </div>
                                                 
-                                                <div class="row g-2 align-items-center">
+                                                
+                                                <div class="col-md-12 d-grid">
+                                                    <button name="upload_btn" type="submit" class="btn btn-lg btn-dark">Submit </button>
+                                                </div>
+
+                                                <!-- <div class="row g-2 align-items-center">
                                                     <div class="col-md-6">
                                                         <button name="upload_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
                                                     </div>
                                                     <div class="col-md-6 text-md-end">
                                                         <a href="application-completed" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
                                                     </div>
-                                                </div>
+                                                </div> -->
 
                                             </form>
 
@@ -226,15 +231,15 @@ require_once './auth/application.php';
                                             </div>
                                             <h5 class="fs-6 mt-2">Doduments Uploaded Successfully</h5>
                                             <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Documents was uploaded successfully, <br>click on the button below to proceed to the next form.</p>
-                                            <a href="application-uploads" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
-                                            <div class="row g-2 align-items-center">
+                                            <a href="application-completed" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
+                                            <!-- <div class="row g-2 align-items-center">
                                                 <div class="col-md-6">
                                                     <button name="upload_btn" type="submit" class="btn btn-lg btn-with-icon btn-dark">Submit <i class="bi bi-arrow-right-circle"></i></button>
                                                 </div>
                                                 <div class="col-md-6 text-md-end">
                                                     <a href="application-completed" type="button" class="btn btn-lg btn-with-icon btn-dark">Next <i class="bi bi-arrow-right"></i></a>
                                                 </div>
-                                            </div>
+                                            </div> -->
                                         </div>
                                         
                                     </div>
@@ -252,6 +257,7 @@ require_once './auth/application.php';
 
     <script src="assets/js/vendor.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="//code.tidio.co/8xtfxxzxdhc6h2gg58onasl3cgtqy7g2.js" async></script>
                                                                 
 </body>
 

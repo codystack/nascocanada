@@ -45,6 +45,9 @@ include './components/header.php';
 
   <!-- javascript -->
   <script src="https://cube.webuildthemes.com/assets/js/vendor.bundle.js"></script>
-  <script src="https://cube.webuildthemes.com/assets/js/index.bundle.js"></script></body>
+  <script src="https://cube.webuildthemes.com/assets/js/index.bundle.js"></script>
+  <script src="//code.tidio.co/8xtfxxzxdhc6h2gg58onasl3cgtqy7g2.js" async></script>
+
+</body>
 
 </html>

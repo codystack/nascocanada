@@ -3,6 +3,48 @@ session_start();
 // Connect database
 include "./config/db.php";
 
+// Intake script
+if (isset($_POST['intake_btn'])) {
+
+    $userID = $conn->real_escape_string($_POST['userID']);
+    $projectName = $conn->real_escape_string($_POST['projectName']);
+    $amountNeeded = $conn->real_escape_string($_POST['amountNeeded']);
+    $location = $conn->real_escape_string($_POST['location']);
+    $projectType = $conn->real_escape_string($_POST['projectType']);
+    $referralName = $conn->real_escape_string($_POST['referralName']);
+    $tangibleAssets = $conn->real_escape_string($_POST['tangibleAssets']);
+    $totalInvestment = $conn->real_escape_string($_POST['totalInvestment']);
+    $willingToFuther = $conn->real_escape_string($_POST['willingToFuther']);
+    $governmentApproved = $conn->real_escape_string($_POST['governmentApproved']);
+    $suretyBond = $conn->real_escape_string($_POST['suretyBond']);
+    $issues = $conn->real_escape_string($_POST['issues']);
+    $alreadyExisting = $conn->real_escape_string($_POST['alreadyExisting']);
+    $ifYes = $conn->real_escape_string($_POST['ifYes']);
+    $experiences = $conn->real_escape_string($_POST['experiences']);
+    $comment = $conn->real_escape_string($_POST['comment']);
+    $status = $conn->real_escape_string($_POST['status']);
+
+
+    $check_form_query = "SELECT * FROM intake_form WHERE userID='".$_SESSION['id']."'";
+    $result = mysqli_query($conn, $check_form_query);
+    if (mysqli_num_rows($result) > 0) {
+        echo "<meta http-equiv='refresh' content='5; URL=intake-form'>";
+    }else {
+        // Finally, insert intake informations if there are no errors in the form
+        $query = "INSERT INTO intake_form (userID, projectName, amountNeeded, location, projectType, referralName, tangibleAssets, totalInvestment, willingToFuther, governmentApproved, suretyBond, issues, alreadyExisting, ifYes, experiences, comment, status) 
+  			        VALUES('$userID', '$projectName', '$amountNeeded', '$location', '$projectType', '$referralName', '$tangibleAssets', '$totalInvestment', '$willingToFuther', '$governmentApproved', '$suretyBond', '$issues', '$alreadyExisting', '$ifYes', '$experiences', '$comment', 'Filled')";
+        mysqli_query($conn, $query);
+        if (mysqli_affected_rows($conn) > 0) {
+
+            $_SESSION['success_message'] = "Business Infromation Completed!";
+            echo "<meta http-equiv='refresh' content='0; URL=application-uploads'>";
+        }else {
+            $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
+            echo "<meta http-equiv='refresh' content='5; URL=intake-form'>";
+        }
+    }
+}
+
 // Business script
 if (isset($_POST['business_btn'])) {
 
@@ -297,10 +339,10 @@ if (isset($_POST['upload_btn'])) {
             copy($_FILES['profileOfContractor']['tmp_name'], $profileOfContractor_path);
 
             $_SESSION['success_message'] = "Upload Infromation Completed!";
-            echo "<meta http-equiv='refresh' content='3; URL=application-finance'>";
+            echo "<meta http-equiv='refresh' content='0; URL=application-completed'>";
         }else {
             $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
-            echo "<meta http-equiv='refresh' content='5; URL=application-finance'>";
+            echo "<meta http-equiv='refresh' content='5; URL=application-uploads'>";
         }
     }
 }
