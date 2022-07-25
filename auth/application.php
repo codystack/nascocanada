@@ -22,7 +22,22 @@ if (isset($_POST['intake_btn'])) {
     $ifYes = $conn->real_escape_string($_POST['ifYes']);
     $experiences = $conn->real_escape_string($_POST['experiences']);
     $comment = $conn->real_escape_string($_POST['comment']);
+    $executiveSummary_path = $conn->real_escape_string('upload/'.$_FILES['executiveSummary']['name']);
     $status = $conn->real_escape_string($_POST['status']);
+
+    if (file_exists($executiveSummary_path)) {
+        $executiveSummary_path = $conn->real_escape_string('upload/'.uniqid().rand().$_FILES['executiveSummary']['name']);
+    }
+
+    $checker = 0;
+
+    //make sure file type is pdf
+    if (preg_match("!pdf!", $_FILES['executiveSummary']['type'])) {
+        $checker ++;
+    }
+    if ($checker < 1) { 
+        exit;
+    }
 
 
     $check_form_query = "SELECT * FROM intake_form WHERE userID='".$_SESSION['id']."'";
@@ -31,13 +46,16 @@ if (isset($_POST['intake_btn'])) {
         echo "<meta http-equiv='refresh' content='5; URL=intake-form'>";
     }else {
         // Finally, insert intake informations if there are no errors in the form
-        $query = "INSERT INTO intake_form (userID, projectName, amountNeeded, location, projectType, referralName, tangibleAssets, totalInvestment, willingToFuther, governmentApproved, suretyBond, issues, alreadyExisting, ifYes, experiences, comment, status) 
-  			        VALUES('$userID', '$projectName', '$amountNeeded', '$location', '$projectType', '$referralName', '$tangibleAssets', '$totalInvestment', '$willingToFuther', '$governmentApproved', '$suretyBond', '$issues', '$alreadyExisting', '$ifYes', '$experiences', '$comment', 'Filled')";
+        $query = "INSERT INTO intake_form (userID, projectName, amountNeeded, location, projectType, referralName, tangibleAssets, totalInvestment, willingToFuther, governmentApproved, suretyBond, issues, alreadyExisting, ifYes, experiences, comment, executiveSummary, status) 
+  			        VALUES('$userID', '$projectName', '$amountNeeded', '$location', '$projectType', '$referralName', '$tangibleAssets', '$totalInvestment', '$willingToFuther', '$governmentApproved', '$suretyBond', '$issues', '$alreadyExisting', '$ifYes', '$experiences', '$comment', '$executiveSummary_path', 'Filled')";
         mysqli_query($conn, $query);
         if (mysqli_affected_rows($conn) > 0) {
 
+            //copy image to upload folder
+            copy($_FILES['executiveSummary']['tmp_name'], $executiveSummary_path);
+
             $_SESSION['success_message'] = "Business Infromation Completed!";
-            echo "<meta http-equiv='refresh' content='0; URL=application-uploads'>";
+            echo "<meta http-equiv='refresh' content='0; URL=application-completed'>";
         }else {
             $_SESSION['error_message'] = "Error processing application".mysqli_error($conn);
             echo "<meta http-equiv='refresh' content='5; URL=intake-form'>";
@@ -227,6 +245,7 @@ if (isset($_POST['finance_btn'])) {
     $secondFinanciersPhone = $conn->real_escape_string($_POST['secondFinanciersPhone']);
     $status = $conn->real_escape_string($_POST['status']);
 
+    
 
     $check_form_query = "SELECT * FROM finance WHERE userID='".$_SESSION['id']."'";
     $result = mysqli_query($conn, $check_form_query);

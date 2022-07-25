@@ -154,8 +154,9 @@ require_once './auth/application.php';
                                                 }
                                             ?>
 
-                                            <form class="row g-2 g-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
+                                            <form class="row g-2 g-lg-3" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST" enctype="multipart/form-data">
 
+                                            <p class="text-dark fw-light fs-sm"><i class="bi bi-info-circle"></i> <d>Note</d> that only PDF file formats are approved to be uploaded.</p>
                                             
                                                 <div class="col-md-12" style="display: none;">
                                                     <label for="inputZip" class="form-label">User ID</label>
@@ -164,7 +165,7 @@ require_once './auth/application.php';
 
                                                 <div class="col-md-8">
                                                     <label for="inputZip" class="form-label">Project Name</label>
-                                                    <input type="text" class="form-control" name="projectName" placeholder="Project Name">
+                                                    <input type="text" class="form-control" required name="projectName" placeholder="Project Name">
                                                 </div>
 
                                                 <div class="col-md-4">
@@ -240,6 +241,11 @@ require_once './auth/application.php';
                                                     <textarea class="form-control" placeholder="Give a short paragraph on funding terms of conditions your seeking" name="comment"></textarea>
                                                 </div>
 
+                                                <label for="inputZip" class="form-label mb-0">Other supporting document</label>
+                                                <div class="col-md-12 input-group mt-0">
+                                                    <input type="file" class="form-control" name="executiveSummary">
+                                                </div>
+
                                                 <div class="col-md-12 d-grid">
                                                     <button name="intake_btn" type="submit" class="btn btn-lg btn-dark">Submit</button>
                                                 </div>
@@ -255,25 +261,6 @@ require_once './auth/application.php';
 
                                             </form>
 
-                                        </div>
-
-                                        <div class="card-body bg-white text-center <?php if($status==''){echo 'd-none';}else{ echo'd-unset';}?>">
-                                            <div class="checkmark mt-2">
-                                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                                                        viewBox="0 0 161.2 161.2" enable-background="new 0 0 161.2 161.2" xml:space="preserve">
-                                                    <path class="path" fill="none" stroke="#0f9372" stroke-miterlimit="10" d="M425.9,52.1L425.9,52.1c-2.2-2.6-6-2.6-8.3-0.1l-42.7,46.2l-14.3-16.4
-                                                        c-2.3-2.7-6.2-2.7-8.6-0.1c-1.9,2.1-2,5.6-0.1,7.7l17.6,20.3c0.2,0.3,0.4,0.6,0.6,0.9c1.8,2,4.4,2.5,6.6,1.4c0.7-0.3,1.4-0.8,2-1.5
-                                                        c0.3-0.3,0.5-0.6,0.7-0.9l46.3-50.1C427.7,57.5,427.7,54.2,425.9,52.1z"/>
-                                                    <circle class="path" fill="none" stroke="#0f9372" stroke-width="4" stroke-miterlimit="10" cx="80.6" cy="80.6" r="62.1"/>
-                                                    <polyline class="path" fill="none" stroke="#0f9372" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="113,52.8 
-                                                        74.1,108.4 48.2,86.4 "/>
-
-                                                    <circle class="spin" fill="none" stroke="#0f9372" stroke-width="4" stroke-miterlimit="10" stroke-dasharray="12.2175,12.2175" cx="80.6" cy="80.6" r="73.9"/>
-                                                </svg>
-                                            </div>
-                                            <h5 class="fs-6 mt-2">Intake Form Submitted Successfully</h5>
-                                            <p class="text-dark fw-light fs-6 mb-5">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> your Intake form was submitted successfully, <br>click on the button below to proceed to the next form.</p>
-                                            <a href="application-uploads" type="button" class="btn btn-lg btn-with-icon btn-dark mb-3">Next <i class="bi bi-arrow-right"></i></a>
                                         </div>
                                         
                                     </div>

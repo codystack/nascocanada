@@ -119,7 +119,7 @@ require_once './auth/application.php';
                                                 </svg>
                                             </div>
                                             <h5 class="fs-4 mt-2">Application Completed</h5>
-                                            <p class="text-dark fw-light fs-6 mb-2">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> you successfully completed the loan application, <br>for application review kindly contact.</p>
+                                            <p class="text-dark fw-light fs-6 mb-2">Hello! <span class="fw-bold"><?php echo $_SESSION['firstName']; ?>,</span> we're reviewing your loan request!<br> Please expect feedback in your email address within 24hours.</p>
                                             <p class="text-dark fw-light fs-5">Mail:<br><a href="mailto:finance@nascocanada.ca">finance@nascocanada.ca</a></p>
                                             <p class="text-dark fw-light fs-5 mb-2">WhatsApp:<br><a href="https://wa.me/message/PGASK7RR2QX3D1">+1 (438) 601-3108</a></p>
                                             
